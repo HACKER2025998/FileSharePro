@@ -1,0 +1,175 @@
+/* -------------------------------------- */
+/* 1. Règle de base et Rendu Professionnel */
+/* -------------------------------------- */
+:root {
+    --couleur-primaire: #007bff;
+    --couleur-secondaire: #28a745;
+    --fond-clair: #f8f9fa;
+    --fond-sombre: #343a40;
+    --ombre: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fond-clair);
+    color: var(--fond-sombre);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--couleur-primaire);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--ombre);
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* -------------------------------------- */
+/* 2. Layout & Responsivité (Media Queries) */
+/* -------------------------------------- */
+
+/* Le conteneur principal est fluide */
+.container {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Base pour les cartes de section */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--ombre);
+}
+
+/* MEDIA QUERY pour les grands écrans (PC, tablettes larges) */
+@media (min-width: 768px) {
+    .container {
+        width: 700px; /* Taille fixe pour un look pro et centré sur desktop */
+        max-width: 90%;
+    }
+}
+
+/* -------------------------------------- */
+/* 3. Styles des Éléments Interactifs */
+/* -------------------------------------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Pour le bouton de téléchargement (lien) */
+    text-align: center;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn.primary {
+    background-color: var(--couleur-primaire);
+    color: white;
+    width: 100%; /* Pleine largeur sur mobile */
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+}
+
+.btn.secondary {
+    background-color: var(--couleur-secondaire);
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #1e7e34;
+}
+
+/* Message de retour (succès/erreur) */
+.feedback-message {
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.feedback-message[class*="✅"] { /* Pour le succès */
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* -------------------------------------- */
+/* 4. Liste des Fichiers (Flexbox pour Responsive) */
+/* -------------------------------------- */
+
+.file-list-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.file-list-section li {
+    display: flex;
+    justify-content: space-between; /* Espace le nom et le bouton */
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.file-list-section li:last-child {
+    border-bottom: none;
+}
+
+.file-list-section li span {
+    flex-grow: 1; /* Prend l'espace restant pour le nom */
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+/* MEDIA QUERY spécifique pour la liste sur mobile */
+@media (max-width: 500px) {
+    .file-list-section li {
+        flex-direction: column; /* Empile les éléments sur très petit écran */
+        align-items: flex-start;
+    }
+    .file-list-section li span {
+        margin-bottom: 10px;
+    }
+    .btn.secondary {
+        width: 100%; /* Le bouton prend toute la largeur */
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--fond-sombre);
+    color: white;
+    font-size: 0.9em;
+}

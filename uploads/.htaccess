@@ -1,0 +1,5 @@
+# Interdit l'exécution de scripts PHP dans ce répertoire
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
